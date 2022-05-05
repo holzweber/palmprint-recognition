@@ -1,5 +1,5 @@
 data
-.idea
+**/.idea/workspace.xml **/.idea/tasks.xml
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
