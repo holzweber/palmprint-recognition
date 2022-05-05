@@ -1,0 +1,1 @@
+model created with classic CNN approach - ResNet18 Unfreezed

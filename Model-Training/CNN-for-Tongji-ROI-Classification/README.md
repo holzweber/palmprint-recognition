@@ -1,0 +1,1 @@
+In this directories three different networks are trained based on the Tongji ROI palmprint images.
