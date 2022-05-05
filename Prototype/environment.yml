@@ -129,7 +129,7 @@ dependencies:
   - sqlite=3.38.2=h2bbff1b_0
   - terminado=0.13.1=py37haa95532_0
   - testpath=0.5.0=pyhd3eb1b0_0
-  - tk=8.6.11=h2bbff1b_0
+  - tk=8.6.12=h8ffe710_0
   - torchvision=0.11.3=py37_cu113
   - tornado=6.1=py37h2bbff1b_0
   - traitlets=5.1.1=pyhd3eb1b0_0
