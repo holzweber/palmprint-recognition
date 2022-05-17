@@ -7,7 +7,7 @@ import os
 
 # Function to rename multiple files
 def main():
-    folder = "imgMask"
+    folder = "output"
     folderCSV = "csvLandmark"
     offset = 1381
     for count, filename in enumerate(os.listdir(folder)):
@@ -23,7 +23,7 @@ def main():
         # rename() function will
         # rename all the files
         os.rename(src, dst)
-        os.rename(csvSrc, csvDst)
+        #os.rename(csvSrc, csvDst)
 
 
 # Driver Code

@@ -22,23 +22,17 @@ def rotateCoordinates(thetaOld, angle):
 p90Degr = math.pi/2 #rotate right
 m90Degr = -math.pi/2 #rotate left
 leng = len(os.listdir('imgMask'))
-print('rotating img')
+
 for count, filename in enumerate(os.listdir('imgMask')):
     currentleftRotate = leng+count
     currentrightRotate = 2*leng+count
-
+    purename = filename.split('.')[-2]
     img = Image.open(f"imgMask/{filename}")
     imgm90 = img.rotate(90, PIL.Image.NEAREST, expand=1)  # rotate left
     imgp90 = img.rotate(-90, PIL.Image.NEAREST, expand=1)  # rotate right
     imgm90.save(f"imgMask/{currentleftRotate}.jpg")
     imgp90.save(f"imgMask/{currentrightRotate}.jpg")
-leng = len(os.listdir('csvLandmark'))
-
-print('rotating csv')
-for count, filename in enumerate(os.listdir('csvLandmark')):
-    currentleftRotate = leng+count
-    currentrightRotate = 2*leng+count
-    with open(f"csvLandmark/{filename}") as file:
+    with open(f"csvLandmark/{purename}.csv") as file:
         theta = np.loadtxt(file, delimiter=";")
         thetam90 = rotateCoordinates(theta.copy(), m90Degr)
         thetap90 = rotateCoordinates(theta.copy(), p90Degr)
