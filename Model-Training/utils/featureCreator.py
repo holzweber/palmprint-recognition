@@ -5,29 +5,26 @@ import numpy as np
 clicked = 0
 coordinates = []
 
+width = 600 # set width of output image
+height = 600 # set height of output image
+dir ="TODO" # set input directory, where all hand images are placed
+
 # function to display the coordinates of
 # of the points clicked on the image
 def click_event(event, x, y, flags, params):
-    global clicked, coordinates
+    global clicked, coordinates, height, width
     # checking for left mouse clicks
     if event == cv2.EVENT_LBUTTONDOWN:
-        clicked += 1
-        # displaying the coordinates
-        # on the Shell
-        width=600
-        height=600
+        clicked += 1 # inc clicked, so we can check if there is a right amount of landmarks afterwards
+        # normalize
         currX = ((x-width)*2)/(width-1)+1
         currY = ((y-height)*2)/(height-1)+1
         coordinates.append([currX, currY])
-        # displaying the coordinates
-        # on the image window
+        # displaying the coordinates on the image window
         font = cv2.FONT_HERSHEY_SIMPLEX
         cv2.putText(img, str(clicked), (x, y), font, 1, (255, 0, 0), 2)
         cv2.imshow('image', img)
 
-dir ="C:/Users/cholz/Documents/JKU/SS2022/ProjectInDataScience/Prototype/palmprint-recognition/data/Original Images/session2"
-width = 600
-height = 600
 # driver function
 if __name__ == "__main__":
     cnt = 0
